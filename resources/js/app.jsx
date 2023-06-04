@@ -13,3 +13,12 @@ import './bootstrap';
  */
 
 import './components/Example';
+
+import ReactDOM from "react-dom/client";
+
+function App() {
+    return <h1 className="text-red-400 text-4xl">Hello World</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("app"));
+root.render(<App />);
