@@ -13,12 +13,18 @@ import './bootstrap';
  */
 
 import './components/Example';
+import NavBar from './components/NavBar';
+import About from './components/About';
 
 import ReactDOM from "react-dom/client";
+import { render } from 'react-dom';
 
-function App() {
-    return <h1 className="text-red-400 text-4xl">Hello World</h1>;
-}
+
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
-root.render(<App />);
+root.render(
+    <>
+        <NavBar />
+        <About />
+    </>
+);
