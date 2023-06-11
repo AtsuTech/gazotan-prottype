@@ -15,16 +15,23 @@ import './bootstrap';
 import './components/Example';
 import NavBar from './components/NavBar';
 import About from './components/About';
+import Home from './components/home';
 
 import ReactDOM from "react-dom/client";
 import { render } from 'react-dom';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
     <>
-        <NavBar />
-        <About />
+        <BrowserRouter>
+            <NavBar />
+            <Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/home" element={<Home />} />
+            </Routes>
+        </BrowserRouter>
     </>
 );
