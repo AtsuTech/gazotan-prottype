@@ -15,7 +15,11 @@ import './bootstrap';
 import './components/Example';
 import NavBar from './components/NavBar';
 import About from './components/About';
+import Footer from './components/Footer';
 import Home from './components/home';
+
+import Register from './components/auth_components/Register';
+import RegisterComplete from './components/auth_components/RegisterComplete';
 
 import ReactDOM from "react-dom/client";
 import { render } from 'react-dom';
@@ -29,9 +33,12 @@ root.render(
         <BrowserRouter>
             <NavBar />
             <Routes>
+                <Route path="/register" element={<Register />} />
+                <Route path="/register/complete" element={<RegisterComplete />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/home" element={<Home />} />
             </Routes>
+            <Footer />
         </BrowserRouter>
     </>
 );

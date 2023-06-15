@@ -1,3 +1,11 @@
+## Gazotan
+
+
+Laravel 10 JWT - Complete API Authentication Tutorial
+
+<a href="https://www.laravelia.com/post/laravel-10-jwt-complete-api-authentication-tutorial">Laravel 10 JWT導入</a>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
