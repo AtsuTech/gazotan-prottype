@@ -20,6 +20,7 @@ import Home from './components/home';
 
 import Register from './components/auth_components/Register';
 import RegisterComplete from './components/auth_components/RegisterComplete';
+import Login from './components/auth_components/Login';
 
 import ReactDOM from "react-dom/client";
 import { render } from 'react-dom';
@@ -35,6 +36,7 @@ root.render(
             <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/register/complete" element={<RegisterComplete />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/home" element={<Home />} />
             </Routes>
