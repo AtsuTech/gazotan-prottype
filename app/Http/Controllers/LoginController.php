@@ -82,7 +82,7 @@ class LoginController extends Controller
             'email_verify' => $verify_check,
             'user_name' => $user_name,
             'token_type' => 'bearer',
-            'expires_in' => auth('api')->factory()->getTTL() * 60
+            'expires_in' => auth('api')->factory()->getTTL() * 60 * 60 * 24 * 5 //5週間有効
         ],200);
     }
 }

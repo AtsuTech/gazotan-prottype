@@ -14,17 +14,25 @@ import './bootstrap';
 
 import './components/Example';
 import NavBar from './components/NavBar';
+import Welcome from './components/welcome';
 import About from './components/About';
 import Footer from './components/Footer';
 import Home from './components/home';
+import MyPage from './components/MyPage';
 
 import Register from './components/auth_components/Register';
 import RegisterComplete from './components/auth_components/RegisterComplete';
 import Login from './components/auth_components/Login';
 
+//承認ユーザーのみアクセス可能
+import AuthRequier from './components/auth_components/AuthRequier';
+
+//ログイン後は表示したくないページの制御
+import AuthNotAccess from './components/auth_components/AuthNotAccess';
+
 import ReactDOM from "react-dom/client";
 import { render } from 'react-dom';
-import { BrowserRouter, Routes, Route, } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 
 
@@ -34,11 +42,13 @@ root.render(
         <BrowserRouter>
             <NavBar />
             <Routes>
-                <Route path="/register" element={<Register />} />
+                <Route path="/" element={<Welcome />}/>
+                <Route path="/register" element={<AuthNotAccess><Register /></AuthNotAccess>} />
                 <Route path="/register/complete" element={<RegisterComplete />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<AuthNotAccess><Login /></AuthNotAccess>} />
                 <Route path="/about" element={<About />} />
                 <Route path="/home" element={<Home />} />
+                <Route path="/mypage" element={<AuthRequier><MyPage /></AuthRequier>} />
             </Routes>
             <Footer />
         </BrowserRouter>

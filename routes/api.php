@@ -17,8 +17,13 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) { 
     return $request->user();
+});
+
+//承認確認
+Route::middleware('auth:api')->get('/auth', function (Request $request) { 
+    return response()->json(['authenticated' => 200]);
 });
 
 Route::middleware(['api'])->group(function ($router){
