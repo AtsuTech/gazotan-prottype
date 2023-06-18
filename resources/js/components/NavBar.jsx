@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Logout from './auth_components/Logout';
+
 function NavBar() {
 
     const isAuthenticated = localStorage.getItem('auth_status');
@@ -32,9 +34,7 @@ function NavBar() {
             <div className="flex mr-2">
                 { isAuthenticated == 200 ?
                     <>
-                        <NavLink to="/login" activeClassName="active">
-                            <button className="block w-24 h-12 mt-4 p-1 ml-2 text-center text-gray-600">ログアウト</button>
-                        </NavLink>
+                        <Logout />
                         <NavLink to="/mypage" activeClassName="active">
                             <button className="block w-20 h-12 mt-4 p-1 ml-2 text-center text-gray-600">{user_name}</button>
                         </NavLink>

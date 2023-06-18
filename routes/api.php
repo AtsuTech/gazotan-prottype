@@ -39,3 +39,8 @@ Route::middleware(['api'])->group(function ($router){
     //ログイン処理
     Route::post('/login',[LoginController::class,'login']);
 });
+
+//ログアウト処理
+Route::middleware(['jwt.auth'])->group(function (){
+    Route::post('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
+});
