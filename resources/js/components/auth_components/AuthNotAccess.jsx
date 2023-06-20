@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Cookies, useCookies } from "react-cookie";
-import { Navigate } from 'react-router-dom';
 
 
 
@@ -22,7 +21,7 @@ const AuthNotAccess = ({ children }) => {
 
     const isAuthenticated = localStorage.getItem('auth_status');
 
-    return isAuthenticated == 200 ? (<Navigate to="/" />) : (children);
+    return isAuthenticated == 200 ? (window.location.href = '/') : (children);
 
 };
 

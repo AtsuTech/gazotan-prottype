@@ -66,8 +66,8 @@ function Login() {
 
             //ログイン後、マイページに移動
             // window.location.href = '/user';
-            navigate("/about");
-
+            navigate("/home");
+            location.reload();
             
         })
         .catch(function (error) {

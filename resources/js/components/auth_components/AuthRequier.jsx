@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Cookies, useCookies } from "react-cookie";
-import { Navigate } from 'react-router-dom';
+
 
 /**  
 * ログイン処理の際に、ローカルストレージに200ステータスを保存している。
@@ -26,7 +26,7 @@ const AuthRequier = ({ children }) => {
   const isAuthenticated = localStorage.getItem('auth_status');
 
   //未承認ユーザーがアクセスした場合はログインページに移動させる
-  return isAuthenticated == 200 ? (children) : ( <Navigate to="/login" />);
+  return isAuthenticated == 200 ? (children) : ( window.location.href = '/login');
 
 };
 

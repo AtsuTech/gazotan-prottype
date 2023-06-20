@@ -6,11 +6,11 @@ function NavBar() {
 
     const isAuthenticated = localStorage.getItem('auth_status');
     const user_name = localStorage.getItem('user_name');
-
+    
     return (
         <div className="flex justify-between stiky top-0 z-50 flex w-full h-20 bg-amber-400 text-gray-300">
             <h1 className="flex text-white ml-2 font-light" role="APP名">
-                <span className="text-4xl text-white">Gazotan:{isAuthenticated}</span>
+                <span className="text-4xl text-white">Gazotan:{isAuthenticated}/con:</span>
                 <ul className="flex">
                     <li className="m-2">
                         <NavLink to="/about" className="block w-20 h-12 mt-4 p-1 ml-2 text-center text-gray-600">

@@ -19,7 +19,6 @@ function Logout(){
         // トークンでアクセスしてユーザー名を取得
         axios.post('http://127.0.0.1:8000/api/logout',bodyParameters, { headers: { Authorization: "Bearer " + auth_token.token} }).then((response) => { 
             alert(response.data.message);
-            console.log(response);
 
             // トークン削除
             removeCookie("token");
@@ -32,9 +31,7 @@ function Logout(){
 
 
             //ログアウト後、ログインページに移動
-            const navigate = useNavigate();
-            navigate('/login');
-
+            window.location.href = '/login'
 
         }).catch((error) => { 
             alert('ログアウトNG');        
