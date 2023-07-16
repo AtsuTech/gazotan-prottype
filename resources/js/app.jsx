@@ -23,6 +23,8 @@ import MyPage from './components/MyPage';
 import Register from './components/auth_components/Register';
 import RegisterComplete from './components/auth_components/RegisterComplete';
 import Login from './components/auth_components/Login';
+import PasswordForgot from './components/auth_components/PasswordForgot';
+import PasswordReset from './components/auth_components/PasswordReset';
 
 //承認ユーザーのみアクセス可能
 import AuthRequier from './components/auth_components/AuthRequier';
@@ -48,6 +50,8 @@ root.render(
                 <Route path="/login" element={<AuthNotAccess><Login /></AuthNotAccess>} />
                 <Route path="/about" element={<About />} />
                 <Route path="/home" element={<Home />} />
+                <Route path="/password/forgot" element={<PasswordForgot />} />
+                <Route path="/password/reset" element={<PasswordReset />} />
                 <Route path="/mypage" element={<AuthRequier><MyPage /></AuthRequier>} />
             </Routes>
             <Footer />
