@@ -2,7 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { Cookies, useCookies } from "react-cookie";
 import { useState, useEffect, useContext } from "react";
+import { Link } from 'react-router-dom';
 
+document.title = 'Myページ';
 
 function MyPage(){
     const [auth_token, setCookie, removeCookie] = useCookies(["token"]);
@@ -44,6 +46,16 @@ function MyPage(){
                 <li>{user.password}</li>
                 <li>{user.created_at}</li>
             </ul>
+
+            <Link to="/myflashcards">
+                <button className="block mt-5 bg-gray-800 w-full h-10 text-white ml-auto mr-auto rounded-lg shadow-lg font-medium text-1xl">My単語帳</button>
+            </Link>
+            <Link to="/flashcards/create">
+                <button className="block mt-5 bg-gray-800 w-full h-10 text-white ml-auto mr-auto rounded-lg shadow-lg font-medium text-1xl">単語帳を作る</button>
+            </Link>
+            <Link to="/about">
+                <button className="block mt-5 bg-gray-800 w-full h-10 text-white ml-auto mr-auto rounded-lg shadow-lg font-medium text-1xl">暗記する</button>
+            </Link>
         </div>
     );
 }

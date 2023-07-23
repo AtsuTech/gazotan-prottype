@@ -17,8 +17,10 @@ import NavBar from './components/NavBar';
 import Welcome from './components/welcome';
 import About from './components/About';
 import Footer from './components/Footer';
-import Home from './components/home';
+import Home from './components/Home';
 import MyPage from './components/MyPage';
+import MyFlashCards from './components/MyFlashCards';
+import CreateFlashCard from './components/CreateFlashCard';
 
 import Register from './components/auth_components/Register';
 import RegisterComplete from './components/auth_components/RegisterComplete';
@@ -53,6 +55,8 @@ root.render(
                 <Route path="/password/forgot" element={<PasswordForgot />} />
                 <Route path="/password/reset" element={<PasswordReset />} />
                 <Route path="/mypage" element={<AuthRequier><MyPage /></AuthRequier>} />
+                <Route path="/myflashcards" element={<AuthRequier><MyFlashCards /></AuthRequier>} />
+                <Route path="/flashcards/create" element={<AuthRequier><CreateFlashCard /></AuthRequier>} />
             </Routes>
             <Footer />
         </BrowserRouter>

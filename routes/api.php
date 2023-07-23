@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RgisterVerifyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\FlashCardsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,14 @@ Route::middleware(['api'])->group(function ($router){
 
     //パスワードリセット処理
     Route::post('/password/reset',[PasswordResetController::class,'passwordreset'])->name('password.reset');
+
+    //home画面共有単語帳の表示
+    Route::get('/flashcard/home',[FlashCardsController::class,'home_index']);
+
+    //単語帳作成
+    Route::post('/flashcard/create',[FlashCardsController::class,'create']);
+
+    Route::get('/flashcard/private',[FlashCardsController::class,'private_index']);
     
 });
 
