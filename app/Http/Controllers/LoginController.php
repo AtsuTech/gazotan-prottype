@@ -31,6 +31,7 @@ class LoginController extends Controller
         $user = Authenticatable::where('email','=',request(['email']))->first();
         $verify_check = $user->email_verified_at;
         $user_name = $user->name;
+        $user_id = $user->id;
 
         // メール承認のカラムがnullどうかチェック。nullならログインを却下する
         if(is_null($verify_check)){
@@ -42,7 +43,7 @@ class LoginController extends Controller
             return response()->json(['error' => 'ログインできません。メールアドレス、パスワードをご確認ください。'], 401);
         }
 
-        return $this->respondWithToken($token,$verify_check,$user_name);
+        return $this->respondWithToken($token,$verify_check,$user_name,$user_id);
     }
 
     /**
@@ -75,12 +76,13 @@ class LoginController extends Controller
     /**
      * ログイン成功時にトークンなどの値を返す
      */
-    protected function respondWithToken($token,$verify_check,$user_name)
+    protected function respondWithToken($token,$verify_check,$user_name,$user_id)
     {
         return response()->json([
             'access_token' => $token,
             'email_verify' => $verify_check,
             'user_name' => $user_name,
+            'user_id' => $user_id,
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60 * 60 * 24 * 5 //5週間有効
         ],200);

@@ -55,17 +55,15 @@ function Login() {
             //トークンをクッキーに保存
             setCookie("token",response.data.access_token);
 
-            // props.setAuth(true);
 
-            //ユーザ名をローカルストレージに保存
+            //ユーザ名、ユーザidをローカルストレージに保存
             localStorage.setItem('user_name',response.data.user_name);
+            localStorage.setItem('user_id',response.data.user_id);
 
             //ステータスコードをローカルストレージに保存
-            // localStorage.setItem('status',response.status);
             localStorage.setItem('auth_status',response.status);
 
             //ログイン後、マイページに移動
-            // window.location.href = '/user';
             navigate("/home");
             location.reload();
             
